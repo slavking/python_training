@@ -1,0 +1,6 @@
+import subprocess
+
+print("start")
+L=[]
+L=subprocess.run(["pgrep", "-x", "xbindkeys"],shell=True).returncode
+print(L)
