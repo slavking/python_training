@@ -1,0 +1,105 @@
+
+Test: song_playlist([('a', 4.4, 4.0), ('b', 3.5, 7.7), ('c', 5.1, 6.9), ('d', 2.7, 1.2)], 20)
+
+Your output:
+
+    ['d', 'a', 'c', 'b']
+
+Correct output:
+
+    ['a', 'd', 'c', 'b']
+
+Test: song_playlist([('a', 4.4, 4.0), ('b', 3.5, 7.7), ('c', 5.1, 6.9), ('d', 2.7, 1.2)], 12.2)
+
+Your output:
+
+    ['d', 'a', 'c']
+
+Correct output:
+
+    ['a', 'd', 'c']
+
+Test: song_playlist([('a', 4.4, 4.0), ('b', 3.5, 7.7), ('c', 5.1, 6.9), ('d', 2.7, 1.2)], 11)
+
+Your output:
+
+    ['d', 'a']
+
+Correct output:
+
+    ['a', 'd']
+
+Test: song_playlist([('a', 4.0, 4.4), ('b', 7.7, 3.5), ('c', 6.9, 5.1), ('d', 1.2, 2.7)], 20)
+
+Your output:
+
+    ['d', 'b', 'a', 'c']
+
+Correct output:
+
+    ['a', 'd', 'b', 'c']
+
+Test: song_playlist([('a', 4.0, 4.4), ('b', 7.7, 3.5), ('c', 6.9, 5.1), ('d', 1.2, 2.7)], 12.3)
+
+Your output:
+
+    ['d', 'b', 'a']
+
+Correct output:
+
+    ['a', 'd', 'b']
+
+Test: song_playlist([('a', 1.4, 4.0)], 20)
+
+Output:
+
+    ['a']
+
+Test: song_playlist([('aa', 4, 4), ('bb', 5, 7), ('cc', 5, 6), ('dd', 2, 1)], 1)
+
+Your output:
+
+    ['dd']
+
+Correct output:
+
+    []
+
+Test: song_playlist([('aa', 4, 4), ('bb', 5, 7), ('cc', 5, 6), ('dd', 2, 1)], 3)
+
+Your output:
+
+    ['dd']
+
+Correct output:
+
+    []
+
+Test: song_playlist([('z', 0.1, 0.1), ('a', 4.4, 4.0), ('b', 3.5, 7.7), ('c', 5.1, 6.9), ('d', 2.7, 1.2)], 1)
+
+Output:
+
+    ['z']
+
+Test: song_playlist([('z', 0.1, 0.1), ('a', 4.4, 4.0), ('b', 3.5, 7.7), ('c', 5.1, 6.9), ('d', 2.7, 1.2)], 5.4)
+
+Output:
+
+    ['z', 'd', 'a']
+
+Test: song_playlist([('z', 0.1, 0.1), ('a', 4.4, 4.0), ('b', 2.7, 1.2), ('cc', 3.5, 7.7), ('ddd', 5.1, 6.9)], 5.4)
+
+Output:
+
+    ['z', 'b', 'a']
+
+Test: song_playlist([('z', 0.1, 9.1), ('a', 4.4, 4.0), ('b', 2.7, 1.2), ('cc', 3.5, 7.7), ('ddd', 5.1, 6.9)], 14)
+
+Your output:
+
+    ['b', 'a', 'ddd']
+
+Correct output:
+
+    ['z', 'b']
+

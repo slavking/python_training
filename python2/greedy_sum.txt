@@ -1,0 +1,8 @@
+
+
+    N is the number of elements in X.
+
+    Test case: If L = ['a', 'z', 'p'], stdDevOfLengths(L) should return 0.
+
+    Test case: If L = ['apples', 'oranges', 'kiwis', 'pineapples'], stdDevOfLengths(L) should return 1.8708.
+

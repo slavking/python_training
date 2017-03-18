@@ -1,0 +1,146 @@
+
+Test: class Patient 1
+
+Initialize a Patient with randomized viruses
+
+Your output:
+
+    viruses = [
+    SimpleVirus(0.26, 0.35)
+    SimpleVirus(0.17, 0.27)
+    SimpleVirus(0.81, 0.29)
+    SimpleVirus(0.18, 0.05)
+    SimpleVirus(0.86, 0.18)
+    SimpleVirus(0.34, 0.39)
+    SimpleVirus(0.68, 0.12)
+    ]
+    P1 = Patient(viruses, 8)
+    Traceback (most recent call last):
+      File "submission.py", line 119, in getTotalPop
+        return self.totalPop
+    AttributeError: 'Patient' object has no attribute 'totalPop'
+
+Correct output:
+
+    viruses = [
+    SimpleVirus(0.26, 0.35)
+    SimpleVirus(0.17, 0.27)
+    SimpleVirus(0.81, 0.29)
+    SimpleVirus(0.18, 0.05)
+    SimpleVirus(0.86, 0.18)
+    SimpleVirus(0.34, 0.39)
+    SimpleVirus(0.68, 0.12)
+    ]
+    P1 = Patient(viruses, 8)
+    P1.getTotalPop() = 7
+
+Test: class Patient 2
+
+Create a Patient with virus that is never cleared and always reproduces
+
+Your output:
+
+    virus = SimpleVirus(1.0, 0.0)
+    patient = Patient([virus], 100)
+    Updating the patient for 100 trials...
+    patient.update implemented incorrectly
+    patient.getTotalPop() expected to be >= 100; got 1
+
+Correct output:
+
+    virus = SimpleVirus(1.0, 0.0)
+    patient = Patient([virus], 100)
+    Updating the patient for 100 trials...
+    patient.getTotalPop() expected to be >= 100
+    Test successfully completed
+
+Test: class Patient 3
+
+Create a Patient with virus that is always cleared and always reproduces
+
+Output:
+
+    virus = SimpleVirus(1.0, 1.0)
+    patient = Patient([virus], 100)
+    Updating the patient for 100 trials...
+    patient.getTotalPop() expected to = 0
+    Test successfully completed
+
+Test: class Patient 4
+
+Initialize a Patient with randomized viruses
+
+Your output:
+
+    viruses = [
+    SimpleVirus(0.47, 0.98) #1
+    SimpleVirus(0.08, 0.92) #2
+    SimpleVirus(0.26, 0.9) #3
+    SimpleVirus(0.05, 0.9) #4
+    SimpleVirus(0.13, 0.87) #5
+    SimpleVirus(0.29, 0.92) #6
+    SimpleVirus(0.57, 0.74) #7
+    SimpleVirus(0.72, 0.89) #8
+    ]
+    P1 = Patient(viruses, 9)
+    Traceback (most recent call last):
+      File "submission.py", line 119, in getTotalPop
+        return self.totalPop
+    AttributeError: 'Patient' object has no attribute 'totalPop'
+
+Correct output:
+
+    viruses = [
+    SimpleVirus(0.47, 0.98)
+    SimpleVirus(0.08, 0.92)
+    SimpleVirus(0.26, 0.9)
+    SimpleVirus(0.05, 0.9)
+    SimpleVirus(0.13, 0.87)
+    SimpleVirus(0.29, 0.92)
+    SimpleVirus(0.57, 0.74)
+    SimpleVirus(0.72, 0.89)
+    ]
+    P1 = Patient(viruses, 9)
+    P1.getTotalPop() = 8
+    Updating patient 10 times... all exceptions should be handled...
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    Test Completed
+
+Test: class Patient 5
+
+Check exception handling by raising different types of exceptions in SimpleVirus.reproduce
+
+Your output:
+
+    Fail: Your Patient.update method caught an exception of type ValueError when it shouldn't have.
+    You should never use bare `except` clauses in your code. Only catch 'NoChildException'.
+    Fail: Your Patient.update method caught an exception of type TypeError when it shouldn't have.
+    You should never use bare `except` clauses in your code. Only catch 'NoChildException'.
+    Fail: Your Patient.update method caught an exception of type ZeroDivisionError when it shouldn't have.
+    You should never use bare `except` clauses in your code. Only catch 'NoChildException'.
+    Fail: Your Patient.update method caught an exception of type NameError when it shouldn't have.
+    You should never use bare `except` clauses in your code. Only catch 'NoChildException'.
+    Fail: Your Patient.update method caught an exception of type AttributeError when it shouldn't have.
+    You should never use bare `except` clauses in your code. Only catch 'NoChildException'.
+    Successfully caught raised 'NoChildException'
+    Test Completed
+
+Correct output:
+
+    Successfully ignored raised exception of type: ValueError
+    Successfully ignored raised exception of type: TypeError
+    Successfully ignored raised exception of type: ZeroDivisionError
+    Successfully ignored raised exception of type: NameError
+    Successfully ignored raised exception of type: AttributeError
+    Successfully caught raised 'NoChildException'
+    Test Completed
+

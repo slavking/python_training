@@ -1,0 +1,91 @@
+
+Test: 1
+
+
+        (Die([1]), 10, 1000)
+        
+
+Your output:
+
+    test 1
+    Successfully called makeHistogram
+    Test UNsuccessful
+
+Correct output:
+
+    test 1
+    Successfully called makeHistogram
+    Test successful
+
+Test: 2
+
+
+        (Die([1,1]), 10, 1000)
+        
+
+Your output:
+
+    test 2
+    Successfully called makeHistogram
+    Test UNsuccessful
+
+Correct output:
+
+    test 2
+    Successfully called makeHistogram
+    Test successful
+
+Test: 3
+
+
+        (Die([1,2,3,4,5,6]), 50, 1000)
+        
+
+Your output:
+
+    test 3
+    Successfully called makeHistogram
+    Test UNsuccessful
+
+Correct output:
+
+    test 3
+    Successfully called makeHistogram
+    Test successful
+
+Test: 4
+
+
+        (Die([1,2,3,4,5,6,6,6,7]), 50, 1000)
+        
+
+Your output:
+
+    test 4
+    Successfully called makeHistogram
+    Test UNsuccessful
+
+Correct output:
+
+    test 4
+    Successfully called makeHistogram
+    Test successful
+
+Test: 5
+
+
+        # (Die([1,2,3,4,5,6,6,6,7]), 1, 1000)
+        
+
+Your output:
+
+    test 5
+    Successfully called makeHistogram
+    Test UNsuccessful
+
+Correct output:
+
+    test 5
+    Successfully called makeHistogram
+    Test successful
+

@@ -1,0 +1,76 @@
+
+Test 1
+
+Function call: greedy_cow_transport({'Louis': 45, 'Miss Bella': 15, 'Clover': 5, 'Muscles': 65, 'Patches': 60, 'MooMoo': 85, 'Horns': 50, 'Lotus': 10, 'Polaris': 20, 'Milkshake': 75}, 100)
+
+Your output:
+
+    [['MooMoo'], ['Milkshake'], ['Muscles'], ['Patches'], ['Horns', 'Louis'], ['Polaris', 'Miss Bella', 'Lotus', 'Clover']]
+
+Correct output:
+
+    [['MooMoo', 'Miss Bella'], ['Milkshake', 'Polaris', 'Clover'], ['Muscles', 'Lotus'], ['Patches'], ['Horns', 'Louis']]
+
+Test 1
+
+Function call: greedy_cow_transport({'Abby': 38, 'Betsy': 65, 'Rose': 50, 'Lilly': 24, 'Dottie': 85, 'Buttercup': 72, 'Patches': 12, 'Willow': 35, 'Daisy': 50, 'Coco': 10}, 100)
+
+Your output:
+
+    [['Dottie'], ['Buttercup'], ['Betsy'], ['Daisy', 'Rose'], ['Abby', 'Willow', 'Lilly'], ['Patches', 'Coco']]
+
+Correct output:
+
+    [['Dottie', 'Patches'], ['Buttercup', 'Lilly'], ['Betsy', 'Willow'], ['Daisy', 'Rose'], ['Abby', 'Coco']]
+
+Test 1
+
+Function call: greedy_cow_transport({'Abby': 28, 'Betsy': 39, 'Rose': 42, 'Luna': 41, 'Buttercup': 11, 'Willow': 59, 'Starlight': 54, 'Coco': 59}, 120)
+
+Your output:
+
+    [['Coco', 'Willow'], ['Starlight', 'Rose'], ['Luna', 'Betsy', 'Abby', 'Buttercup']]
+
+Correct output:
+
+    [['Willow', 'Coco'], ['Starlight', 'Rose', 'Buttercup'], ['Luna', 'Betsy', 'Abby']]
+
+
+
+brute_force_cow_transport({"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5},10)
+
+
+Test 1
+
+Function call: brute_force_cow_transport({'Boo': 20, 'Lotus': 40, 'Horns': 25, 'MooMoo': 50, 'Milkshake': 40, 'Miss Bella': 25}, 100)
+
+Your output:
+
+    [['Horns', 'Miss Bella', 'Milkshake', 'Boo', 'Lotus'], ['MooMoo']]
+
+Correct output:
+
+    [['MooMoo', 'Horns', 'Miss Bella'], ['Milkshake', 'Lotus', 'Boo']]
+
+Test 2
+
+Function call: brute_force_cow_transport({'Betsy': 65, 'Buttercup': 72, 'Daisy': 50}, 75)
+
+Your output:
+
+    [['Betsy', 'Daisy'], ['Buttercup']]
+
+Correct output:
+
+    [['Buttercup'], ['Daisy'], ['Betsy']]
+
+Test 3
+
+Function call: brute_force_cow_transport({'Betsy': 39, 'Buttercup': 11, 'Luna': 41, 'Starlight': 54}, 145)
+
+Output:
+
+    [['Starlight', 'Betsy', 'Buttercup', 'Luna']]
+
+#fail
+brute_force_cow_transport({'Lotus': 40, 'Milkshake': 40, 'MooMoo': 50, 'Horns': 25, 'Miss Bella': 25, 'Boo': 20}, 100)

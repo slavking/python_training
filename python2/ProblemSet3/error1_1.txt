@@ -1,0 +1,295 @@
+
+INCORRECT
+Hide output
+Hide output
+Test: Initialization 1
+
+Initialize a SimpleVirus
+
+Output:
+
+    Passed test
+
+Test: Initialization 2
+
+Initialize a Patient
+
+Output:
+
+    Passed test
+
+Test: SimpleVirus 1
+
+Initialize a SimpleVirus that is never cleared and always reproduces
+
+Output:
+
+    v1 = SimpleVirus(1.0, 0.0)
+    Testing 'doesClear' and 'reproduce' methods
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    Test completed.
+
+Test: SimpleVirus 2
+
+Initialize a SimpleVirus that is never cleared and never reproduces
+
+Output:
+
+    v1 = SimpleVirus(0.0, 0.0)
+    Testing 'doesClear' and 'reproduce' methods
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    v1.doesClear(): False
+    Test completed.
+
+Test: SimpleVirus 3
+
+Initialize a SimpleVirus that is always cleared and always reproduces
+
+Output:
+
+    v1 = SimpleVirus(1.0, 1.0)
+    Testing 'doesClear' and 'reproduce' methods
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    Test completed.
+
+Test: SimpleVirus 4
+
+Initialize a SimpleVirus that is always cleared and never reproduces
+
+Output:
+
+    v1 = SimpleVirus(0.0, 1.0)
+    Testing 'doesClear' and 'reproduce' methods
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    v1.doesClear(): True
+    Test completed.
+
+Test: SimpleVirus 5
+
+Initialize a SimpleVirus with randomized probabilities
+
+Your output:
+
+    v1 = SimpleVirus(0.95, 0.22)
+    Testing reproduce. Be sure your implementation is making EXACTLY ONE call to random.random(), and no other random module calls.
+    popDensity = 0.04
+    Reproduced successfully
+    Reproduced successfully
+    Reproduced successfully
+    Reproduced successfully
+    Raised 'NoChildException'
+    Test completed.
+
+Correct output:
+
+    v1 = SimpleVirus(0.95, 0.22)
+    Testing reproduce. Be sure your implementation is making EXACTLY ONE call to random.random(), and no other random module calls.
+    popDensity = 0.04
+    Reproduced successfully
+    Reproduced successfully
+    Reproduced successfully
+    Reproduced successfully
+    Reproduced successfully
+    Reproduced successfully
+    Reproduced successfully
+    Raised 'NoChildException'
+    Test completed.
+
+Test: class Patient 1
+
+Initialize a Patient with randomized viruses
+
+Output:
+
+    viruses = [
+    SimpleVirus(0.0, 0.41)
+    SimpleVirus(0.68, 0.03)
+    SimpleVirus(0.75, 0.97)
+    SimpleVirus(0.47, 0.79)
+    SimpleVirus(0.01, 0.63)
+    SimpleVirus(0.56, 0.79)
+    SimpleVirus(0.91, 0.48)
+    SimpleVirus(0.33, 0.59)
+    ]
+    P1 = Patient(viruses, 9)
+    P1.getTotalPop() = 8
+
+Test: class Patient 2
+
+Create a Patient with virus that is never cleared and always reproduces
+
+Output:
+
+    virus = SimpleVirus(1.0, 0.0)
+    patient = Patient([virus], 100)
+    Updating the patient for 100 trials...
+    patient.getTotalPop() expected to be >= 100
+    Test successfully completed
+
+Test: class Patient 3
+
+Create a Patient with virus that is always cleared and always reproduces
+
+Output:
+
+    virus = SimpleVirus(1.0, 1.0)
+    patient = Patient([virus], 100)
+    Updating the patient for 100 trials...
+    patient.getTotalPop() expected to = 0
+    Test successfully completed
+
+Test: class Patient 4
+
+Initialize a Patient with randomized viruses
+
+Your output:
+
+    viruses = [
+    SimpleVirus(0.59, 0.8200000000000001)
+    SimpleVirus(0.92, 0.91)
+    SimpleVirus(0.6, 0.78)
+    SimpleVirus(0.66, 0.81)
+    SimpleVirus(0.96, 0.78)
+    ]
+    P1 = Patient(viruses, 7)
+    P1.getTotalPop() = 5
+    Updating patient 10 times... all exceptions should be handled...
+    len(P1.viruses) < maxPop? False
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    Test Completed
+
+Correct output:
+
+    viruses = [
+    SimpleVirus(0.59, 0.8200000000000001)
+    SimpleVirus(0.92, 0.91)
+    SimpleVirus(0.6, 0.78)
+    SimpleVirus(0.66, 0.81)
+    SimpleVirus(0.96, 0.78)
+    ]
+    P1 = Patient(viruses, 7)
+    P1.getTotalPop() = 5
+    Updating patient 10 times... all exceptions should be handled...
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    Test Completed
+
+Test: class Patient 5
+
+Check exception handling by raising different types of exceptions in SimpleVirus.reproduce
+
+Output:
+
+    Successfully ignored raised exception of type: ZeroDivisionError
+    Successfully ignored raised exception of type: NameError
+    Successfully ignored raised exception of type: ValueError
+    Successfully ignored raised exception of type: TypeError
+    Successfully ignored raised exception of type: AttributeError
+    Successfully caught raised 'NoChildException'
+    Test Completed
+
+
+
+
+Test: class Patient 4
+
+Initialize a Patient with randomized viruses
+
+Your output:
+
+    viruses = [
+    SimpleVirus(0.86, 0.8200000000000001)
+    SimpleVirus(0.83, 0.87)
+    SimpleVirus(0.13, 0.73)
+    SimpleVirus(0.57, 0.76)
+    SimpleVirus(0.23, 0.89)
+    ]
+    P1 = Patient(viruses, 7)
+    P1.getTotalPop() = 5
+    Updating patient 10 times... all exceptions should be handled...
+    len(P1.viruses) < maxPop? False
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? False
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    Test Completed
+
+Correct output:
+
+    viruses = [
+    SimpleVirus(0.86, 0.8200000000000001)
+    SimpleVirus(0.83, 0.87)
+    SimpleVirus(0.13, 0.73)
+    SimpleVirus(0.57, 0.76)
+    SimpleVirus(0.23, 0.89)
+    ]
+    P1 = Patient(viruses, 7)
+    P1.getTotalPop() = 5
+    Updating patient 10 times... all exceptions should be handled...
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    len(P1.viruses) < maxPop? True
+    Test Completed
+

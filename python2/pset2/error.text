@@ -1,0 +1,250 @@
+
+Test: 4 test updatePositionAndClean
+
+        Test StandardRobot.updatePositionAndClean() 
+
+Your output:
+
+    Creating room and robot...
+    Setting position and direction to Position(1.5, 2.5) and 90...
+    Calling updatePositionAndClean(); robot speed is 1.0
+    Robot position is updated incorrectly by updatePositionAndClean(): expected (2.50, 2.50), got (1.50, 2.50)
+
+Correct output:
+
+    Creating room and robot...
+    Setting position and direction to Position(1.5, 2.5) and 90...
+    Calling updatePositionAndClean(); robot speed is 1.0
+    Passed; now calling updatePositionAndClean() 20 times
+    Passed test.
+
+
+Test: 5 test updatePositionAndClean
+
+        Test StandardRobot.updatePositionAndClean() 
+
+Your output:
+
+    Creating randomly sized room: 8x4 - and robot at speed 0.66...
+    Robot initalized at random position
+    Was initial position cleaned? True
+    Robot initalized at random direction:
+    Number of cleaned tiles: 1
+
+    Calling updatePositionAndClean() 30 times...
+    Should have cleaned at least 5 tiles, cleaned 1
+
+Correct output:
+
+    Creating randomly sized room: 8x4 - and robot at speed 0.66...
+    Robot initalized at random position
+    Was initial position cleaned? True
+    Robot initalized at random direction:
+    Number of cleaned tiles: 1
+
+    Calling updatePositionAndClean() 30 times...
+    Cleaned the minimum number of tiles; test passed.
+
+
+Your output:
+
+    Random position 0: (4.00, 4.00)
+    (4.00, 4.00)
+    Random position 1: (2.00, 8.00)
+    Random position 2: (5.00, 4.00) #JA DOBIJAM TRUE
+    (5.00, 4.00)
+    Random position 3: (1.00, 2.00)
+    (1.00, 2.00)
+    Random position 4: (3.00, 3.00)
+    (3.00, 3.00)
+
+Correct output:
+
+    Random position 0: (4.00, 4.00)
+    (4.00, 4.00)
+    Random position 1: (2.00, 8.00)
+    Random position 2: (5.00, 4.00) #TREBA FAIL
+    Random position 3: (1.00, 2.00)
+    (1.00, 2.00)
+    Random position 4: (3.00, 3.00)
+    (3.00, 3.00)
+
+
+
+ INCORRECT
+Hide output
+Hide output
+Test: 1 class creation
+
+        room = RectangularRoom(5, 5)
+        room.getNumTiles() 
+
+Output:
+
+    Successfully created a room of size 25
+
+Test: 2 test getNumTiles
+
+        This test creates a number of randomly sized rooms and
+        checks the number of tiles by calling room.getNumTiles(). 
+
+Output:
+
+    room = RectangularRoom(2, 7)
+    room = RectangularRoom(6, 10)
+    room = RectangularRoom(10, 8)
+    room = RectangularRoom(8, 8)
+    room = RectangularRoom(2, 5)
+    Successfully created a room of size 10
+
+Test: 3 unclean tiles FAIL
+
+        room = RectangularRoom(4, 6)
+        This tests that all squares are properly marked as unclean
+        by calling the isTileCleaned() and getNumCleanedTiles() methods.
+
+Your output:
+
+    Successfully created a room of size 24
+    Traceback (most recent call last):
+      File "submission.py", line 80, in isTileCleaned
+        if (self.clean_matrix[m][n] == 1):
+    IndexError: list index out of range
+
+Correct output:
+
+    Successfully created a room of size 24
+    Number of cleaned tiles: 
+
+Test: 4 test cleaningTiles FAIL
+
+        This test creates a randomly sized room and checks the
+        number of clean tiles by calling room.getNumCleanTiles(). Then, the
+        tiles in the room are cleaned and the check is performed again.
+
+Your output:
+
+    room = RectangularRoom(2, 3)
+    Successfully created a room of size 6
+    Number of clean tiles: 0
+    Traceback (most recent call last):
+      File "submission.py", line 66, in cleanTileAtPosition
+        self.clean_matrix[x][y]=1
+    TypeError: list indices must be integers or slices, not float
+
+Correct output:
+
+    room = RectangularRoom(2, 3)
+    Successfully created a room of size 6
+    Number of clean tiles: 0
+    After cleaning, number of clean tiles: 6
+
+Test: 5 unclean tiles FAIL
+
+        room = RectangularRoom(6, 8)
+        This test cleans a subset of the tiles by calling the cleanTileAtPosition method, 
+        then checks that those tiles are marked as cleaned by calling the isTileCleaned method.
+
+Your output:
+
+    Successfully created a room of size 48
+    Traceback (most recent call last):
+      File "submission.py", line 80, in isTileCleaned
+        if (self.clean_matrix[m][n] == 1):
+    IndexError: list index out of range
+
+Correct output:
+
+    Successfully created a room of size 48
+    After cleaning, number of cleaned tiles: 
+
+Test: 6 cleaning tiles repeatedly FAIL
+
+        This test cleans the same tiles repeatedly, which should result in
+        the tiles continuing to be marked clean.
+
+Your output:
+
+    room = RectangularRoom(6, 20)
+    Traceback (most recent call last):
+      File "submission.py", line 66, in cleanTileAtPosition
+        self.clean_matrix[x][y]=1
+    TypeError: list indices must be integers or slices, not float
+
+Correct output:
+
+    room = RectangularRoom(14, 19)
+    Done with iteration 0, number of cleaned tiles is 19
+    Done with iteration 1, number of cleaned tiles is 19
+    Done with iteration 2, number of cleaned tiles is 19
+    Done with iteration 3, number of cleaned tiles is 19
+    Done with iteration 4, number of cleaned tiles is 19
+
+Test: 7 getRandomPosition FAIL
+
+         Test getRandomPosition by calling it 100 times and ensuring the outputs are sensible.
+
+Your output: 
+
+    getRandomPosition() returned (3.00, 3.00) which is not in [0, 3), [0, 3).
+
+Correct output: 
+
+Test: 8 isPositionInRoom FAIL
+
+        Test isPositionInRoom by testing random positions inside and outside of a room.
+
+Your output:
+
+    isPositionInRoom((0.00, 0.00)) incorrectly indicates that (0.00, 0.00) is not in an 9x8 room
+    isPositionInRoom((0.10, 0.00)) incorrectly indicates that (0.10, 0.00) is not in an 9x8 room
+    isPositionInRoom((0.00, 0.10)) incorrectly indicates that (0.00, 0.10) is not in an 9x8 room
+    isPositionInRoom((0.10, 0.00)) incorrectly indicates that (0.10, 0.00) is not in an 9x8 room
+    isPositionInRoom((0.00, 0.10)) incorrectly indicates that (0.00, 0.10) is not in an 9x8 room
+    isPositionInRoom((8.90, 7.90)) incorrectly indicates that (8.90, 7.90) is not in an 9x8 room
+
+Correct output: 
+
+Test: 9 isPositionInRoom PASS
+
+        Test getRandomPosition and isPositionInRoom by generating random positions
+        then testing if they are within the room.
+
+Output:
+
+FAIL 8
+isPositionInRoom((0.62, 7.12)) incorrectly indicates that (0.62, 7.12) is in an 10x4 room
+
+FAIL 8
+isPositionInRoom((4.80, 0.95)) incorrectly indicates that (4.80, 0.95) is in an 3x9 room
+
+FAIL 8
+isPositionInRoom((2.08, 9.72)) incorrectly indicates that (2.08, 9.72) is not in an 5x10 room
+
+Test: 8 isPositionInRoom FAIL
+
+        Test isPositionInRoom by testing random positions inside and outside of a room.
+
+Your output:
+
+    isPositionInRoom((5.90, 6.90)) incorrectly indicates that (5.90, 6.90) is not in an 6x7 room
+
+FAIL
+isPositionInRoom((5.93, 2.28)) incorrectly indicates that (5.93, 2.28) is in an 3x8 room
+
+Fail: generated position (0.64, 5.94); isPositionInRoom says this position is not in the room.
+Fail: generated position (0.96, 6.00); isPositionInRoom says this position is not in the room.
+Fail: generated position (1.35, 6.34); isPositionInRoom says this position is not in the room.
+Fail: generated position (2.09, 6.38); isPositionInRoom says this position is not in the room.
+Fail: generated position (0.75, 4.41); isPositionInRoom says this position is not in the room.
+Fail: generated position (1.14, 4.45); isPositionInRoom says this position is not in the room.
+Fail: generated position (0.10, 5.91); isPositionInRoom says this position is not in the room.
+
+isPositionInRoom((9.00, 7.00)) incorrectly indicates that (9.00, 7.00) is in an 9x7 room
+isPositionInRoom((9.00, 6.90)) incorrectly indicates that (9.00, 6.90) is in an 9x7 room
+isPositionInRoom((9.00, 7.10)) incorrectly indicates that (9.00, 7.10) is in an 9x7 room
+isPositionInRoom((8.90, 7.00)) incorrectly indicates that (8.90, 7.00) is in an 9x7 room
+isPositionInRoom((8.90, 7.10)) incorrectly indicates that (8.90, 7.10) is in an 9x7 room
+isPositionInRoom((9.10, 7.00)) incorrectly indicates that (9.10, 7.00) is in an 9x7 room
+isPositionInRoom((9.10, 7.10)) incorrectly indicates that (9.10, 7.10) is in an 9x7 room
+isPositionInRoom((9.10, 6.90)) incorrectly indicates that (9.10, 6.90) is in an 9x7 room

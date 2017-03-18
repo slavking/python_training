@@ -1,0 +1,66 @@
+
+Test: ResistantVirus 6
+
+Check that mutProb is applied correctly in the reproduce step.
+
+Your output:
+
+    virus = ResistantVirus(1.0, 0.0, {'drug1':True, 'drug2': True, 'drug3': True, 'drug4': True, 'drug5': True, 'drug6': True}, 0.5)
+    Reproducing 10 times by calling virus.reproduce(0, [])
+    Checking the resistances of the children to each of the 6 prescriptions.
+    Since mutProb = 0.5 and the parent virus was resistant to all 6 drugs, we expect each child to be resistant to, on average, half of the six drugs.
+    AttributeError: 'NoneType' object has no attribute 'isResistantTo'
+
+Correct output:
+
+    virus = ResistantVirus(1.0, 0.0, {'drug1':True, 'drug2': True, 'drug3': True, 'drug4': True, 'drug5': True, 'drug6': True}, 0.5)
+    Reproducing 10 times by calling virus.reproduce(0, [])
+    Checking the resistances of the children to each of the 6 prescriptions.
+    Since mutProb = 0.5 and the parent virus was resistant to all 6 drugs, we expect each child to be resistant to, on average, half of the six drugs.
+    Test completed.
+
+Test: ResistantVirus 7
+
+Test for positive mutability.
+
+Your output:
+
+    virus = ResistantVirus(1.0, 0.0, {"drug2": True}, 1.0)
+    Making 100 successive generations and testing their resistance to drug2
+    Fail: virus should reproduce, but got an exception instead.
+    AttributeError: 'NoneType' object has no attribute 'isResistantTo'
+
+Correct output:
+
+    virus = ResistantVirus(1.0, 0.0, {"drug2": True}, 1.0)
+    Making 100 successive generations and testing their resistance to drug2
+    Test completed.
+
+Test: ResistantVirus 8
+
+Test for negative mutability.
+
+Your output:
+
+    virus = ResistantVirus(1.0, 0.0, {"drug1": True}, 0.0)
+    Making 100 successive generations and testing their resistance to drug1.
+    Fail: virus should reproduce, but got an exception instead.
+    AttributeError: 'NoneType' object has no attribute 'isResistantTo'
+
+Correct output:
+
+    virus = ResistantVirus(1.0, 0.0, {"drug1": True}, 0.0)
+    Making 100 successive generations and testing their resistance to drug1.
+    Test completed.
+
+Test: ResistantVirus 9
+
+Test for virus reproduction with drugs applied.
+
+Output:
+
+    virus = ResistantVirus(0.0, 0.0, {"drug1":True, "drug2":False}, 0.0)
+    Test: child = virus.reproduce(0, ["drug2"])
+    Test: child = virus.reproduce(0, ["drug1"])
+    Test completed.
+

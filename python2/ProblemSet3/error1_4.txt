@@ -1,0 +1,33 @@
+
+Test: TreatedPatient 5
+
+Test of getting TreatedPatient's resistant pop
+
+Your output:
+
+    virus1 = ResistantVirus(1.0, 0.0, {"drug1": True}, 0.0)
+    virus2 = ResistantVirus(1.0, 0.0, {"drug1": False, "drug2": True}, 0.0)
+    virus3 = ResistantVirus(1.0, 0.0, {"drug1": True, "drug2": True}, 0.0)
+    patient = sm.TreatedPatient([virus1, virus2, virus3], 100)
+    patient.getResistPop(['drug1']): 2
+    patient.getResistPop(['drug2']): 3
+    patient.getResistPop(['drug1','drug2']): 5
+    patient.getResistPop(['drug3']): 3
+    patient.getResistPop(['drug1', 'drug3']): 5
+    patient.getResistPop(['drug1','drug2', 'drug3']): 8
+    Test completed.
+
+Correct output:
+
+    virus1 = ResistantVirus(1.0, 0.0, {"drug1": True}, 0.0)
+    virus2 = ResistantVirus(1.0, 0.0, {"drug1": False, "drug2": True}, 0.0)
+    virus3 = ResistantVirus(1.0, 0.0, {"drug1": True, "drug2": True}, 0.0)
+    patient = sm.TreatedPatient([virus1, virus2, virus3], 100)
+    patient.getResistPop(['drug1']): 2
+    patient.getResistPop(['drug2']): 2
+    patient.getResistPop(['drug1','drug2']): 1
+    patient.getResistPop(['drug3']): 0
+    patient.getResistPop(['drug1', 'drug3']): 0
+    patient.getResistPop(['drug1','drug2', 'drug3']): 0
+    Test completed.
+
